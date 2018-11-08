@@ -98,7 +98,7 @@ function checkTheGuess(letter) {
     }
   }
 
-  // if there are no indicies, remove a guess and update the hangman image
+  // if there are no matches, remove a guess and update the hangman image
   if (positions.length <= 0) {
     guessesRemaining--;
     updateHangmanPic();
@@ -145,7 +145,7 @@ function makeGuess(letter) {
 
 // On click event
 document.onkeydown = function(event) {
-  // If we finished a game, clear keystrok and reset.
+  // If we finished a game, clear and reset.
   if (finishedGame) {
     gameDone();
     finishedGame = false;
