@@ -30,7 +30,7 @@ var finishedGame = false; // Flag to 'game over play again'
 var wins = 0; // Holds many wins has the player has
 
 // Game sounds
-var keySound = new Audio("./assets/sounds/typewriter-key.wav");
+var keySound = new Audio("./assets/sounds/typewriter-key.mp3");
 var winSound = new Audio("./assets/sounds/you-win.mp3");
 var loseSound = new Audio("./assets/sounds/you-lose.mp3");
 
@@ -153,6 +153,7 @@ document.onkeydown = function(event) {
     // Check to make sure a-z was pressed. used keycode standard. set to lower case
     if (event.keyCode >= 65 && event.keyCode <= 90) {
       makeGuess(event.key.toLowerCase());
+      keySound.play();
       updateGame();
       theWinner();
       theLoser();
